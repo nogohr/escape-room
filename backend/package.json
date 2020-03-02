@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "DEBUG=app nodemon app.js",
-    "migrate": "npx sequelize-cli db:migrate"
+    "migrate": "sequelize-cli db:migrate"
   },
   "author": "",
   "license": "ISC",
