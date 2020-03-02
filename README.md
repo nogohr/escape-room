@@ -5,7 +5,15 @@ ESMS: Escape Room Managment System
 
 ### Prerequisites
 
-* Docker for Mac
+* [Docker for Mac](https://docs.docker.com/docker-for-mac/)
+* [Docker Compose](https://docs.docker.com/compose/install/)
+
+If you use Homebrew you can run:
+
+```sh
+brew cask install docker
+brew install docker-compose
+```
 
 ### Installation
 
