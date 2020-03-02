@@ -1,4 +1,4 @@
-version: '3'
+version: '3.1'
 
 services:
   app:
@@ -9,3 +9,19 @@ services:
     volumes:
       - .:/app
     command: npm start
+
+  mysql:
+    image: mysql:8.0.19
+    environment:
+      MYSQL_USER: "nogohr"
+      MYSQL_PASSWORD: "passw0rd"
+      MYSQL_DATABASE: "nogohr"
+      MYSQL_RANDOM_ROOT_PASSWORD: "yes"
+    ports:
+      - 3306:3306
+    volumes:
+      - data-mysql:/var/lib/mysql
+
+volumes:
+  data-mysql:
+    driver: local
