@@ -1,0 +1,17 @@
+{
+  "presets": ["react-app"],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": ["./src"],
+        "alias": {
+          "@components": "./components",
+          "@views": "./views",
+          "@assets": "./assets",
+          "@helpers": "./helpers"
+        }
+      }
+    ]
+  ]
+}
