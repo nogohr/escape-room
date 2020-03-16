@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "DEBUG=app nodemon app.js",
-    "migrate": "sequelize-cli db:migrate"
+    "migrate": "sequelize-cli db:migrate",
+    "test": "mocha"
   },
   "author": "",
   "license": "ISC",
@@ -16,6 +17,9 @@
     "sequelize": "^5.21.4"
   },
   "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "mocha": "^7.1.0",
     "nodemon": "^2.0.2",
     "sequelize-cli": "^5.5.1"
   }
