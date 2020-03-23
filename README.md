@@ -41,6 +41,6 @@ Usage
 Documentation
 -------------
 
-Fronted service: [frontend/README.md](frontend/README.md)
+Fronted service: [frontend/README.md](frontend/README.md)<br>
 Backend service: [backend/README.md](backend/README.md)
 
