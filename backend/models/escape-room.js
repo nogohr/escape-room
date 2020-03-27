@@ -1,9 +1,16 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  var EscapeRoom = sequelize.define('EscapeRoom', {
+  const EscapeRoom = sequelize.define('EscapeRoom', {
     name: DataTypes.STRING,
-    maxPlayerCount: DataTypes.INTEGER
+    maxPlayerCount: DataTypes.INTEGER,
+    playTime: DataTypes.INTEGER,
+    setupTime: INTEGER,
+    minimumPlayerAge: DataTypes.INTEGER
   });
+
+  EscapeRoom.associate = (models) => {
+    EscapeRoom.hasMany(models.EscapeRoomOrder)
+  };
 
   return EscapeRoom;
 };

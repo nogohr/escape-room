@@ -2,9 +2,9 @@
   "port": 3000,
   "development": {
     "baseUrl" : "http://localhost",
-    "username": "escape-room",
-    "password": "WelcomeER010",
-    "database": "escape-room",
+    "username": "nogohr",
+    "password": "passw0rd",
+    "database": "nogohr",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": false
