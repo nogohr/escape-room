@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     playerCount: DataTypes.INTEGER,
     bookerName: DataTypes.STRING,
     bookerEmail: DataTypes.STRING,
-    bookerPhoneNumber: STRING,
+    bookerPhoneNumber: DataTypes.STRING,
     remark: DataTypes.TEXT
   });
 

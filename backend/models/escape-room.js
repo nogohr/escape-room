@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING,
     maxPlayerCount: DataTypes.INTEGER,
     playTime: DataTypes.INTEGER,
-    setupTime: INTEGER,
+    setupTime: DataTypes.INTEGER,
     minimumPlayerAge: DataTypes.INTEGER
   });
 
