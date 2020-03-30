@@ -4,15 +4,9 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.sequelize.transaction(t => {
       return Promise.all([
-        queryInterface.addColumn('escaperooms', 'playTime', {
-          type: Sequelize.DataTypes.INTEGER
-        }, { transaction: t }),
-        queryInterface.addColumn('escaperooms', 'setupTime', {
-          type: Sequelize.DataTypes.INTEGER,
-        }, { transaction: t }),
-        queryInterface.addColumn('escaperooms', 'minimumPlayerAge', {
-          type: Sequelize.DataTypes.INTEGER,
-        }, { transaction: t })
+        queryInterface.addColumn('escaperooms', 'playTime', { type: Sequelize.DataTypes.INTEGER }, { transaction: t }),
+        queryInterface.addColumn('escaperooms', 'setupTime', { type: Sequelize.DataTypes.INTEGER }, { transaction: t }),
+        queryInterface.addColumn('escaperooms', 'minimumPlayerAge', { type: Sequelize.DataTypes.INTEGER }, { transaction: t })
       ]);
     });
   },
