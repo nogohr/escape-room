@@ -13,14 +13,14 @@ module.exports = {
       escapeRoomId: {
         type: Sequelize.INTEGER,
         references: {
-          model: 'EscapeRoom',
+          model: 'escaperooms',
           key: 'id'
         }
       },
       orderOptionId: {
         type: Sequelize.INTEGER,
         references: {
-          model: 'OrderOption',
+          model: 'orderoptions',
           key: 'id'
         }
       },
