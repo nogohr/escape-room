@@ -61,7 +61,7 @@ module.exports = {
 
   down: (queryInterface, Sequelize) => {
     
-    return queryInterface.dropTable('escaperoom-order');
+    return queryInterface.dropTable('escaperoomorders');
     
   }
 };
