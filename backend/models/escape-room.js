@@ -6,6 +6,8 @@ module.exports = (sequelize, DataTypes) => {
     playTime: DataTypes.INTEGER,
     setupTime: DataTypes.INTEGER,
     minimumPlayerAge: DataTypes.INTEGER
+  }, {
+    tableName: 'escaperooms'
   });
 
   EscapeRoom.associate = (models) => {
