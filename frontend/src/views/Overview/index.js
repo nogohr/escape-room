@@ -5,7 +5,7 @@ import PageLayout from "components/PageLayout";
 import OverviewContainer from "components/OverviewContainer";
 import Footer from "components/Footer";
 
-export default function Oveview() {
+const Overview = () => {
   return (
     <PageLayout>
       <h1>Overzicht</h1>
@@ -13,4 +13,6 @@ export default function Oveview() {
       <Footer link="/reserveren/contact" />
     </PageLayout>
   );
-}
+};
+
+export default Overview;

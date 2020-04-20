@@ -1,9 +1,17 @@
-import React, { Component } from "react";
+import React from "react";
 
-export default function Pay() {
+// Components
+import PageLayout from "components/PageLayout";
+
+import Footer from "components/Footer";
+
+const Pay = () => {
   return (
-    <>
-      <h1>Pay</h1>
-    </>
+    <PageLayout>
+      <h1>Betalen</h1>
+      <Footer link="/reserveren/success" />
+    </PageLayout>
   );
-}
+};
+
+export default Pay;

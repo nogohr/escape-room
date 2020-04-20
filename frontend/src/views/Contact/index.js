@@ -5,12 +5,14 @@ import PageLayout from "components/PageLayout";
 import ContactContainer from "components/ContactContainer";
 import Footer from "components/Footer";
 
-export default function Contact() {
+const Contact = () => {
   return (
     <PageLayout>
       <h1>Contact</h1>
       <ContactContainer />
-      <Footer link="/reserveren/food" />
+      <Footer link="/reserveren/betalen" />
     </PageLayout>
   );
-}
+};
+
+export default Contact;
