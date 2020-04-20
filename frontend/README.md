@@ -1,20 +1,39 @@
-## Available Scripts
+ESMS Backend
+============
 
-In the project directory, you can run:
+## Installation
 
-### `yarn start`
+### Prerequisites
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* [Docker for Mac](https://docs.docker.com/docker-for-mac/)
+* [Docker Compose](https://docs.docker.com/compose/install/)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+If you use Homebrew you can run:
 
-### `yarn test`
+```sh
+brew cask install docker
+brew install docker-compose
+```
 
-Launches the test runner in the interactive watch mode.<br />
+### Installation
 
-### `yarn build`
+1. Install
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    ```bash
+    make install
+    ```
+
+Usage
+-----
+
+1. Start services
+
+    ```
+    make up
+    ```
+
+2. Open website
+
+    ```shell
+    open http://localhost:8000
+    ```

@@ -1,24 +1,33 @@
-## Escape Room Backend
+ESMS Backend
+============
 
-To run the backend server we use Node.js and Express. The docs can be found when clicking the links below.
+## Installation
 
-Node.js docs: https://nodejs.org/docs/latest-v11.x/api/<br>
-Express docs: https://expressjs.com/en/api.html
+### Prerequisites
 
-### How to setup development environment
+* [Docker for Mac](https://docs.docker.com/docker-for-mac/)
+* [Docker Compose](https://docs.docker.com/compose/install/)
 
-#### Install packages
+If you use Homebrew you can run:
 
-To install the required packages run:
-
+```sh
+brew cask install docker
+brew install docker-compose
 ```
-npm install
-```
 
-#### Run the Node server
+### Installation
 
-To run the Node server run:
+1. Install
 
-```
-npm start
-```
+    ```bash
+    make install
+    ```
+
+Usage
+-----
+
+1. Start services
+
+    ```
+    make up
+    ```
