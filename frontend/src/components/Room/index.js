@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Swiper from "swiper";
 import Fab from "@material-ui/core/Fab";
 import ForwardIcon from "@material-ui/icons/ArrowForward";
@@ -10,7 +10,7 @@ import RoomItem from "components/RoomItem";
 //styles
 import styles from "./room.module.scss";
 
-export default function RoomSelect() {
+const RoomSelect = (props) => {
   useEffect(() => {
     let swiper = new Swiper(".swiper-container", {
       slidesPerView: "auto",
@@ -25,30 +25,28 @@ export default function RoomSelect() {
         prevEl: ".swiper-button-prev",
       },
     });
-  });
 
+    console.log("Rooms", props.rooms);
+  }, [props.rooms]);
+
+  const { rooms } = props;
   return (
     <div className={styles.overflow}>
       <div className={[styles.container, "swiper-container"].join(" ")}>
         <div className={[styles.wrapper, "swiper-wrapper"].join(" ")}>
-          <div className="swiper-slide">
-            <RoomItem className={styles.slide} />
-          </div>
-          <div className="swiper-slide">
-            <RoomItem className={styles.slide} />
-          </div>
-          <div className="swiper-slide">
-            <RoomItem className={styles.slide} />
-          </div>
-          <div className="swiper-slide">
-            <RoomItem className={styles.slide} />
-          </div>
-          <div className="swiper-slide">
-            <RoomItem className={styles.slide} />
-          </div>
-          <div className="swiper-slide">
-            <RoomItem className={styles.slide} />
-          </div>
+          {rooms &&
+            rooms.data.map((item, index) => (
+              <div key={index} className="swiper-slide">
+                <RoomItem
+                  name={item.name}
+                  maxPlayerCount={item.maxPlayerCount}
+                  playTime={item.playtime}
+                  setupTime={item.setupTime}
+                  minimumPlayerAge={item.minimumPlayerAge}
+                  className={styles.slide}
+                />
+              </div>
+            ))}
         </div>
       </div>
       <div className={styles.navigation}>
@@ -65,4 +63,6 @@ export default function RoomSelect() {
       </div>
     </div>
   );
-}
+};
+
+export default RoomSelect;

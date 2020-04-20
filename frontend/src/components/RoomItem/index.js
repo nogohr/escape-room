@@ -18,9 +18,10 @@ const useStyles = makeStyles({
   },
 });
 
-export default function RoomItem() {
+const RoomItem = (props) => {
   const classes = useStyles();
 
+  const { name, maxPlayerCount, playTime, setupTime, minimumPlayerAge } = props;
   return (
     <Card className={classes.root}>
       <CardActionArea>
@@ -31,7 +32,7 @@ export default function RoomItem() {
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            Escape Room
+            {name}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
             Lorem Lorem Ipsum Ipsum Escape room
@@ -45,4 +46,6 @@ export default function RoomItem() {
       </CardActions>
     </Card>
   );
-}
+};
+
+export default RoomItem;
