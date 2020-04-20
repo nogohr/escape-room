@@ -14,6 +14,7 @@ router.get("/", (req, res, next) => {
 });
 
 router.get("/escape-rooms", async (req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
   let result = {};
   await EscapeRoom.findAll()
     .then((response) => {
