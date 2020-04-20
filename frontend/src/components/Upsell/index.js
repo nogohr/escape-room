@@ -5,17 +5,17 @@ import Grid from "@material-ui/core/Grid";
 // Componentss
 import UpsellItem from "components/UpsellItem";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   paper: {
     height: 140,
-    width: 100
+    width: 250,
   },
   control: {
-    padding: theme.spacing(2)
-  }
+    padding: theme.spacing(2),
+  },
 }));
 
 export default function UpsellSelect() {
@@ -24,7 +24,7 @@ export default function UpsellSelect() {
   return (
     <Grid container className={classes.root} spacing={2}>
       <Grid item xs={12}>
-        <Grid container justify="center" spacing={3}>
+        <Grid container justify="space-evenly" spacing={3}>
           <UpsellItem />
           <UpsellItem />
           <UpsellItem />

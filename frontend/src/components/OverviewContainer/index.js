@@ -5,10 +5,10 @@ import Grid from "@material-ui/core/Grid";
 // Components
 import OverviewItem from "components/OverviewItem";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1
-  }
+    flexGrow: 1,
+  },
 }));
 
 export default function OverviewContainer() {

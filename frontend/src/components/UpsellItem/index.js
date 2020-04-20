@@ -10,11 +10,12 @@ import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 345
+    width: "100%",
+    maxWidth: 245,
   },
   media: {
-    height: 140
-  }
+    height: 140,
+  },
 });
 
 export default function UpsellItem() {
@@ -23,11 +24,6 @@ export default function UpsellItem() {
   return (
     <Card className={classes.root}>
       <CardActionArea>
-        <CardMedia
-          className={classes.media}
-          image="https://placehold.it/500/500"
-          title="Contemplative Reptile"
-        />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
             DRIKEN ETEN

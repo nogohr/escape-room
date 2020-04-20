@@ -15,7 +15,7 @@ export default function App() {
     <Router>
       <Switch>
         <Route exact path="/">
-          <Home />
+          <Reserve />
         </Route>
         <Route exact path="/reserveren">
           <Reserve />
