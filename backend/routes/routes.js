@@ -1,8 +1,8 @@
 const express = require('express');
 
 const router = express.Router();
-const models = require('../models');
-const EscapeRoom = models.EscapeRoom;
+const controllers = require('../controllers');
+const EscapeRoomController = controllers.EscapeRoomController;
 
 router.get('/', (req, res, next) => {
     const result = {
@@ -13,15 +13,10 @@ router.get('/', (req, res, next) => {
     res.status(200).json(result);
 });
 
-router.get('/escape-rooms', async (req, res, next) => {
-    const escapeRooms = await EscapeRoom.findAll();
-
-    const result = {
-        'data': escapeRooms,
-        'statusCode': 200
-    };
-
-    res.status(200).json(result);
-});
+/** Escape Room Routes */
+router.get('/escape-rooms', EscapeRoomController.getEscapeRooms);
+router.post('/escape-rooms', EscapeRoomController.storeEscapeRoom);
+router.put('/escape-rooms/:id', EscapeRoomController.updateEscapeRoom);
+router.delete('/escape-rooms/:id', EscapeRoomController.deleteEscapeRoom);
 
 exports.routeHandler = router;
