@@ -20,6 +20,6 @@ router.post('/escape-rooms', EscapeRoomController.storeEscapeRoom);
 router.put('/escape-rooms/:id', EscapeRoomController.updateEscapeRoom);
 router.delete('/escape-rooms/:id', EscapeRoomController.deleteEscapeRoom);
 
-router.get('/escape-room-availability/:escape-room-id', AvailabilityController.getAvailability);
+router.get('/escape-room-availability/:id', AvailabilityController.getAvailability);
 
 exports.routeHandler = router;
