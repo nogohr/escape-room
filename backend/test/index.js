@@ -80,31 +80,4 @@ describe('Order options(/order-options) route', () => {
             done();
         });
     });
-
-    it('should return status 200 (post)', (done) => {
-        chai.request(url)
-        .post('/order-options')
-        .end((err, res) => {
-            expect(res).to.have.status(200);
-            done();
-        });
-    });
-
-    it('should return status 200 (put)', (done) => {
-        chai.request(url)
-        .put('/order-options/1')
-        .end((err, res) => {
-            expect(res.body.data[0].maxPlayerCount).to.equal(6);
-            done();
-        });
-    });
-
-    it('should return status 200 (delete)', (done) => {
-        chai.request(url)
-        .delete('/order-options/1')
-        .end((err, res) => {
-            expect(res.body.data[2].minimumPlayerAge).to.equal(16);
-            done();
-        });
-    });
 });
