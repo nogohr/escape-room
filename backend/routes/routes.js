@@ -5,12 +5,12 @@ const controllers = require('../controllers');
 const EscapeRoomController = controllers.EscapeRoomController;
 
 router.get('/', (req, res, next) => {
-    const result = {
-        'data': 'The server is running',
-        'statusCode': 200
-    };
+  const result = {
+    data: 'The server is running',
+    statusCode: 200,
+  };
 
-    res.status(200).json(result);
+  res.status(200).json(result);
 });
 
 /** Escape Room Routes */
