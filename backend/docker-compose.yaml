@@ -1,11 +1,11 @@
-version: '3.1'
+version: "3.1"
 
 services:
   app:
     image: node:10
     working_dir: /app
     ports:
-      - 3000:3000
+      - 3005:3005
     volumes:
       - .:/app
     command: npm start

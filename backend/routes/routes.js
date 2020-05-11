@@ -6,19 +6,25 @@ const controllers = require('../controllers');
 const EscapeRoom = models.EscapeRoom;
 const OrderOption = models.OrderOption;
 const OrderOptionController = controllers.OrderOptionController;
+const EscapeRoomController = controllers.EscapeRoomController;
 
 router.get('/', (req, res, next) => {
-    const result = {
-        'data': 'The server is running',
-        'statusCode': 200
-    };
+  const result = {
+    data: 'The server is running',
+    statusCode: 200,
+  };
 
-    res.status(200).json(result);
+  res.status(200).json(result);
 });
+
+/** Escape Room Routes */
+router.get('/escape-rooms', EscapeRoomController.getEscapeRooms);
+router.post('/escape-rooms', EscapeRoomController.storeEscapeRoom);
+router.put('/escape-rooms/:id', EscapeRoomController.updateEscapeRoom);
+router.delete('/escape-rooms/:id', EscapeRoomController.deleteEscapeRoom);
 
 router.get('/escape-rooms', async (req, res, next) => {
     const escapeRooms = await EscapeRoom.findAll();
-
     const result = {
         'data': escapeRooms,
         'statusCode': 200
