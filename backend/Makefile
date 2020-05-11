@@ -21,3 +21,7 @@ down: ## Stop app
 pristine: ## Reset db
 	npm run migrate
 .PHONY: pristine
+
+cli: ## Create cli inside container
+	docker-compose run --rm app bash
+.PHONY: cli
