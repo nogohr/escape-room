@@ -33,9 +33,9 @@ router.get('/escape-rooms', async (req, res, next) => {
     res.status(200).json(result);
 });
 
-router.get('/order-options', OrderOptionController.getOrderOptions);
-router.post('/order-options', OrderOptionController.storeOrderOption);
-router.put('/order-options/:id', OrderOptionController.updateOrderOption);
-router.delete('/order-options/:id', OrderOptionController.deleteOrderOption);
+router.get('/escape-room-options', OrderOptionController.getOrderOptions);
+router.post('/escape-room-options', OrderOptionController.storeOrderOption);
+router.put('/escape-room-options/:id', OrderOptionController.updateOrderOption);
+router.delete('/escape-room-options/:id', OrderOptionController.deleteOrderOption);
 
 exports.routeHandler = router;
