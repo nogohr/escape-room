@@ -23,16 +23,6 @@ router.post('/escape-rooms', EscapeRoomController.storeEscapeRoom);
 router.put('/escape-rooms/:id', EscapeRoomController.updateEscapeRoom);
 router.delete('/escape-rooms/:id', EscapeRoomController.deleteEscapeRoom);
 
-router.get('/escape-rooms', async (req, res, next) => {
-    const escapeRooms = await EscapeRoom.findAll();
-    const result = {
-        'data': escapeRooms,
-        'statusCode': 200
-    };
-
-    res.status(200).json(result);
-});
-
 router.get('/escape-room-options', OrderOptionController.getOrderOptions);
 router.post('/escape-room-options', OrderOptionController.storeOrderOption);
 router.put('/escape-room-options/:id', OrderOptionController.updateOrderOption);
