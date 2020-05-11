@@ -10,7 +10,7 @@ module.exports = {
     const setupTime = await queryInterface.rawSelect('escaperooms', {}, ['setupTime']);
     const playTime = await queryInterface.rawSelect('escaperooms', {}, ['playTime']);
     const totalEscapeRoomTime = setupTime + playTime;
-    const reservationDate = moment().set("hour", 13).set("minute", 0).set("second", 0);
+    const reservationDate = moment().set("hour", 9).set("minute", 0).set("second", 0);
     let reservationTimes = [reservationDate.toDate()];
 
     for (let index = 1; index <= 3; index++) {
