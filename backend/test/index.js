@@ -69,3 +69,15 @@ describe('escape rooms(/escape-rooms) route', () => {
         });
     });
 });
+
+/** /order-options route */
+describe('Order options(/order-options) route', () => {
+    it('should return status 200 (get)', (done) => {
+        chai.request(url)
+        .get('/order-options')
+        .end((err, res) => {
+            expect(res).to.have.status(200);
+            done();
+        });
+    });
+});
