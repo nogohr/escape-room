@@ -1,5 +1,5 @@
 const express = require('express');
-
+const cors = require('cors');
 const router = express.Router();
 const controllers = require('../controllers');
 const EscapeRoomController = controllers.EscapeRoomController;
@@ -12,6 +12,9 @@ router.get('/', (req, res, next) => {
 
   res.status(200).json(result);
 });
+
+/** Allow CORS on all routes */
+router.all('*', cors());
 
 /** Escape Room Routes */
 router.get('/escape-rooms', EscapeRoomController.getEscapeRooms);
