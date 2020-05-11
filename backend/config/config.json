@@ -6,8 +6,7 @@
     "password": "passw0rd",
     "database": "nogohr",
     "host": "mysql",
-    "dialect": "mysql",
-    "operatorsAliases": false
+    "dialect": "mysql"
   },
   "test": {
     "baseUrl": "",
@@ -15,8 +14,7 @@
     "password": null,
     "database": "database_test",
     "host": "mysql",
-    "dialect": "mysql",
-    "operatorsAliases": false
+    "dialect": "mysql"
   },
   "production": {
     "baseUrl": "",
@@ -24,7 +22,6 @@
     "password": null,
     "database": "database_production",
     "host": "mysql",
-    "dialect": "mysql",
-    "operatorsAliases": false
+    "dialect": "mysql"
   }
 }
