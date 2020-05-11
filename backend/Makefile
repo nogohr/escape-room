@@ -19,7 +19,10 @@ down: ## Stop app
 .PHONY: down
 
 pristine: ## Reset db
-	npm run migrate
+	docker-compose run --rm app npx sequelize-cli db:drop || true
+	docker-compose run --rm app npx sequelize-cli db:create
+	docker-compose run --rm app npm run migrate
+	docker-compose run --rm app npx sequelize-cli db:seed:all
 .PHONY: pristine
 
 cli: ## Create cli inside container
