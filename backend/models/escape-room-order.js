@@ -7,6 +7,8 @@ module.exports = (sequelize, DataTypes) => {
     bookerEmail: DataTypes.STRING,
     bookerPhoneNumber: DataTypes.STRING,
     remark: DataTypes.TEXT
+  }, {
+    tableName: 'escaperoomorders'
   });
 
   EscapeRoomOrder.associate = (models) => {

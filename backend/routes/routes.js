@@ -8,6 +8,7 @@ const OrderOption = models.OrderOption;
 const OrderOptionController = controllers.OrderOptionController;
 const EscapeRoomController = controllers.EscapeRoomController;
 const OrderController = controllers.OrderController;
+const AvailabilityController = controllers.AvailabilityController;
 
 router.get('/', (req, res, next) => {
   const result = {
@@ -23,6 +24,7 @@ router.get('/escape-rooms', EscapeRoomController.getEscapeRooms);
 router.post('/escape-rooms', EscapeRoomController.storeEscapeRoom);
 router.put('/escape-rooms/:id', EscapeRoomController.updateEscapeRoom);
 router.delete('/escape-rooms/:id', EscapeRoomController.deleteEscapeRoom);
+router.get('/escape-room-availability/:id', AvailabilityController.getAvailability);
 
 router.get('/escape-room-options', OrderOptionController.getOrderOptions);
 router.post('/escape-room-options', OrderOptionController.storeOrderOption);

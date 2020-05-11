@@ -1,9 +1,13 @@
+'use strict';
+
+const EscapeRoomController = require('./EscapeRoomController');
+const AvailabilityController = require('./AvailabilityController');
 const OrderOptionController = require('./OrderOptionController')
-const EscapeRoomController = require('./EscapeRoomController')
 const OrderController = require('./OrderController')
 
 module.exports = {
-  OrderOptionController,
   EscapeRoomController,
+  AvailabilityController,
+  OrderOptionController,
   OrderController
 }
