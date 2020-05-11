@@ -60,7 +60,7 @@ exports.getAvailability = async function (req, res) {
   }
 
   const result = {
-    'data': {...availability, orders},
+    'data': availability,
     'statusCode': 200
   };
 
