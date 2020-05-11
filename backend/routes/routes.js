@@ -7,6 +7,7 @@ const EscapeRoom = models.EscapeRoom;
 const OrderOption = models.OrderOption;
 const OrderOptionController = controllers.OrderOptionController;
 const EscapeRoomController = controllers.EscapeRoomController;
+const MailController = controllers.MailController;
 
 router.get('/', (req, res, next) => {
   const result = {
@@ -27,5 +28,10 @@ router.get('/escape-room-options', OrderOptionController.getOrderOptions);
 router.post('/escape-room-options', OrderOptionController.storeOrderOption);
 router.put('/escape-room-options/:id', OrderOptionController.updateOrderOption);
 router.delete('/escape-room-options/:id', OrderOptionController.deleteOrderOption);
+
+
+
+router.get('/test-mail', MailController.sendMail);
+
 
 exports.routeHandler = router;
