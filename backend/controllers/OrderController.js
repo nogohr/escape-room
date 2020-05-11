@@ -14,14 +14,14 @@ exports.getOrder = async function (req, res) {
 
 exports.storeOrder = async function (req, res) {
   const order = Order.create({
-    EscapeRoomId: req.body.EscapeRoomId,
-    OrderOptionId: req.body.OrderOptionId,
-    ReservationDate: req.body.ReservationDate,
-    PlayerCount: req.body.PlayerCount,
-    BookerName: req.body.BookerName,
-    BookerEmail: req.body.BookerEmail,
-    BookerPhoneNumber: req.body.BookerPhoneNumber,
-    Remark: req.body.Remark
+    escapeRoomId: req.body.EscapeRoomId,
+    orderOptionId: req.body.OrderOptionId,
+    reservationDate: req.body.ReservationDate,
+    playerCount: req.body.PlayerCount,
+    bookerName: req.body.BookerName,
+    bookerEmail: req.body.BookerEmail,
+    bookerPhoneNumber: req.body.BookerPhoneNumber,
+    remark: req.body.Remark
   });
 
   const result = {
@@ -35,14 +35,14 @@ exports.storeOrder = async function (req, res) {
 exports.updateOrder = async function (req, res) {
   await Order.findByPk(req.params.id).then(function (option) {
     option.update({
-      EscapeRoomId: req.body.EscapeRoomId,
-      OrderOptionId: req.body.OrderOptionId,
-      ReservationDate: req.body.ReservationDate,
-      PlayerCount: req.body.PlayerCount,
-      BookerName: req.body.BookerName,
-      BookerEmail: req.body.BookerEmail,
-      BookerPhoneNumber: req.body.BookerPhoneNumber,
-      Remark: req.body.Remark
+      escapeRoomId: req.body.EscapeRoomId,
+      orderOptionId: req.body.OrderOptionId,
+      reservationDate: req.body.ReservationDate,
+      playerCount: req.body.PlayerCount,
+      bookerName: req.body.BookerName,
+      bookerEmail: req.body.BookerEmail,
+      bookerPhoneNumber: req.body.BookerPhoneNumber,
+      remark: req.body.Remark
     }).then((note) => {
       res.status(200).json({
         'data': note,
