@@ -1,15 +1,15 @@
-import React, { useState } from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Card from "@material-ui/core/Card";
-import CardActionArea from "@material-ui/core/CardActionArea";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
-import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
-import PeopleIcon from "@material-ui/icons/People";
-import AccessAlarmsIcon from "@material-ui/icons/AccessAlarms";
-import FaceIcon from "@material-ui/icons/Face";
+import React, { useState } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+import PeopleIcon from '@material-ui/icons/People';
+import AccessAlarmsIcon from '@material-ui/icons/AccessAlarms';
+import FaceIcon from '@material-ui/icons/Face';
 
 const useStyles = makeStyles({
   root: {
@@ -19,13 +19,13 @@ const useStyles = makeStyles({
   clicked: {
     maxWidth: 345,
     minWidth: 345,
-    backgroundColor: "darkseagreen",
+    backgroundColor: 'darkseagreen',
   },
   media: {
     height: 140,
   },
   actions: {
-    justifyContent: "space-around",
+    justifyContent: 'space-around',
   },
 });
 
@@ -36,6 +36,7 @@ const RoomItem = (props) => {
   const {
     name,
     maxPlayerCount,
+    id,
     playTime,
     setupTime,
     minimumPlayerAge,
@@ -43,17 +44,17 @@ const RoomItem = (props) => {
     selectItem,
   } = props;
 
-  const clickHandler = (name) => {
+  const clickHandler = (id) => {
     setClick(!clicked);
-    selectItem(name);
+    selectItem(id);
   };
 
-  console.log("Playtime", playTime);
+  console.log('Playtime', playTime);
   return (
     <Card
       className={clicked ? classes.clicked : classes.root}
       key={key}
-      onClick={() => clickHandler(name)}
+      onClick={() => clickHandler(id)}
     >
       <CardActionArea>
         <CardMedia
@@ -62,25 +63,25 @@ const RoomItem = (props) => {
           title={`Escape Room ${key}`}
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
+          <Typography gutterBottom variant='h5' component='h2'>
             {name}
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
+          <Typography variant='body2' color='textSecondary' component='p'>
             Lorem Lorem Ipsum Ipsum Escape room
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions className={classes.actions}>
-        <Typography variant="body1" color="textSecondary" component="span">
+        <Typography variant='body1' color='textSecondary' component='span'>
           <FaceIcon />
           {minimumPlayerAge}+
         </Typography>
-        <Typography variant="body1" color="textSecondary" component="span">
+        <Typography variant='body1' color='textSecondary' component='span'>
           <AccessAlarmsIcon />
           {playTime}m
         </Typography>
 
-        <Button size="small" color="primary">
+        <Button size='small' color='primary'>
           Kiezen
         </Button>
       </CardActions>

@@ -8,13 +8,14 @@ import TimeSelect from 'components/TimeSelect';
 import Footer from 'components/Footer';
 
 // helpers
-import { FetchRooms } from 'helpers/fetch';
+import { FetchRooms, FetchRoomAvailablity } from 'helpers/fetch';
 
 const Reserve = () => {
   const [rooms, setRooms] = useState();
   const [selectedItem, setSelectedItem] = useState();
   const [selectedTime, setSelectedTime] = useState();
   const [selectedDate, setSelectedDate] = useState();
+  const [availableTimes, setAvailableTimes] = useState();
   const [room, setRoom] = useState(0);
 
   useEffect(() => {
@@ -31,7 +32,7 @@ const Reserve = () => {
 
   const selectItem = (item) => {
     setSelectedItem(item);
-    console.log('SelectedItem', item);
+    FetchRoomAvailablity(item).then((data) => setAvailableTimes(data.data));
   };
 
   const selectTime = (item) => {
@@ -49,7 +50,9 @@ const Reserve = () => {
       <h1>Selecteer een datum, tijd & kamer</h1>
       <DatePicker selectDate={selectDate} />
       <Room rooms={rooms} selectItem={selectItem} />
-      <TimeSelect selectTime={selectTime} />
+      {availableTimes && (
+        <TimeSelect availableTimes={availableTimes} selectTime={selectTime} />
+      )}
       <Footer
         props={(selectedItem, selectedTime, selectedDate)}
         link='/reserveren/food'
