@@ -1,5 +1,6 @@
 {
   "port": 3005,
+  "sendGridApiKey": "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",
   "development": {
     "baseUrl": "http://localhost",
     "username": "nogohr",
