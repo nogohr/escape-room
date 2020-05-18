@@ -26,13 +26,13 @@ const UpsellView = (props) => {
   });
 
   //const { fromNotifications } = this.props.location.state
-  console.log('Upsell Props', location);
+  console.log('Upsell Props', location.state.items);
 
   return (
     <PageLayout>
       <h1>Eten en drinken</h1>
       <Upsell options={options} />
-      <Footer link='/reserveren/overzicht' />
+      <Footer items={location.state.items} link='/reserveren/overzicht' />
     </PageLayout>
   );
 };
