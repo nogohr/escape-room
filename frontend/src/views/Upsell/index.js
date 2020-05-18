@@ -1,19 +1,38 @@
-import React from "react";
-import { useLocation } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
+
 // Components
-import PageLayout from "components/PageLayout";
-import Upsell from "components/Upsell";
-import Footer from "components/Footer";
+import PageLayout from 'components/PageLayout';
+import Upsell from 'components/Upsell';
+import Footer from 'components/Footer';
+
+//Helpers
+import { FetchRoomOptions } from 'helpers/fetch';
 
 const UpsellView = (props) => {
   let location = useLocation();
+  const [options, setRoomOptions] = useState();
+
+  useEffect(() => {
+    // FetchRoomOptions()
+    //   .then((data) => {
+    //     console.log('Rooms', data);
+    //     setRoomOptions(data);
+    //     return data;
+    //   })
+    //   .catch((error) => {
+    //     console.log('Error', error);
+    //   });
+  });
+
   //const { fromNotifications } = this.props.location.state
-  console.log("Upsell Props", location.state);
+  console.log('Upsell Props', location.state);
+
   return (
     <PageLayout>
       <h1>Eten en drinken</h1>
-      <Upsell />
-      <Footer link="/reserveren/overzicht" />
+      <Upsell options={options} />
+      <Footer link='/reserveren/overzicht' />
     </PageLayout>
   );
 };
