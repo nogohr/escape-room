@@ -42,6 +42,7 @@ const RoomItem = (props) => {
     minimumPlayerAge,
     key,
     selectItem,
+    selected,
   } = props;
 
   const clickHandler = (id) => {
@@ -52,7 +53,7 @@ const RoomItem = (props) => {
   console.log('Playtime', playTime);
   return (
     <Card
-      className={clicked ? classes.clicked : classes.root}
+      className={selected === id ? classes.clicked : classes.root}
       key={key}
       onClick={() => clickHandler(id)}
     >

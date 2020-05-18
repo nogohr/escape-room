@@ -26,7 +26,7 @@ const UpsellView = (props) => {
   });
 
   //const { fromNotifications } = this.props.location.state
-  console.log('Upsell Props', location.state);
+  console.log('Upsell Props', location);
 
   return (
     <PageLayout>

@@ -29,7 +29,7 @@ const RoomSelect = (props) => {
     console.log('Rooms', props.rooms);
   }, [props.rooms]);
 
-  const { rooms, selectItem } = props;
+  const { rooms, selectItem, selectedRoom } = props;
 
   console.log('selectItem function Room', selectItem);
   return (
@@ -42,6 +42,7 @@ const RoomSelect = (props) => {
               rooms.data.map((item, index) => (
                 <div key={index} className='swiper-slide'>
                   <RoomItem
+                    selected={selectedRoom}
                     selectItem={selectItem}
                     id={item.id}
                     name={item.name}

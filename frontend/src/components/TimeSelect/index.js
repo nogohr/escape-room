@@ -14,23 +14,24 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const TimeItem = (item) => {
+const TimeItem = ({ item, selectTime }) => {
   const [clicked, setClick] = useState(false);
 
-  const handleClick = () => {
-    setClick(!clicked);
-  };
-
-  const date = new Date(item.item);
+  const date = new Date(item);
   const time = `${date.getHours()}:${
     (date.getMinutes() < 10 ? '0' : '') + date.getMinutes()
   }`;
 
+  const handleClick = () => {
+    selectTime(item);
+    setClick(!clicked);
+  };
+
   return (
     <Chip
+      onClick={handleClick}
       key={item}
       label={time}
-      onClick={handleClick}
       deleteIcon={<DoneIcon />}
       color={clicked ? 'primary' : 'default'}
     />
@@ -44,13 +45,7 @@ const TimeSelect = ({ selectTime, availableTimes }) => {
     availableTimes && (
       <div className={classes.root}>
         {availableTimes[0].slots.map((item, index) => {
-          return (
-            <TimeItem
-              onClick={() => selectTime(item.item)}
-              key={index}
-              item={item}
-            />
-          );
+          return <TimeItem selectTime={selectTime} key={index} item={item} />;
         })}
       </div>
     )

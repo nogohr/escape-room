@@ -14,7 +14,7 @@ const Reserve = () => {
   const [rooms, setRooms] = useState();
   const [selectedItem, setSelectedItem] = useState();
   const [selectedTime, setSelectedTime] = useState();
-  const [selectedDate, setSelectedDate] = useState();
+  const [selectedDate, setSelectedDate] = useState(new Date().toISOString());
   const [availableTimes, setAvailableTimes] = useState();
   const [room, setRoom] = useState(0);
 
@@ -31,6 +31,7 @@ const Reserve = () => {
   }, [room]);
 
   const selectItem = (item) => {
+    console.log('Selected Room', item);
     setSelectedItem(item);
     FetchRoomAvailablity(item).then((data) => setAvailableTimes(data.data));
   };
@@ -49,12 +50,12 @@ const Reserve = () => {
     <PageLayout>
       <h1>Selecteer een datum, tijd & kamer</h1>
       <DatePicker selectDate={selectDate} />
-      <Room rooms={rooms} selectItem={selectItem} />
+      <Room rooms={rooms} selectItem={selectItem} selectedRoom={selectedItem} />
       {availableTimes && (
         <TimeSelect availableTimes={availableTimes} selectTime={selectTime} />
       )}
       <Footer
-        props={(selectedItem, selectedTime, selectedDate)}
+        items={{ selectedItem, selectedTime, selectedDate }}
         link='/reserveren/food'
       />
     </PageLayout>
