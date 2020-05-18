@@ -16,7 +16,7 @@ exports.storeOrder = async function (req, res) {
   const order = Order.create({
     escapeRoomId: req.body.escapeRoomId,
     orderOptionId: req.body.orderOptionId,
-    reservationDate: req.body.ReservationDate,
+    reservationDate: req.body.reservationDate,
     playerCount: req.body.playerCount,
     bookerName: req.body.bookerName,
     bookerEmail: req.body.bookerEmail,
