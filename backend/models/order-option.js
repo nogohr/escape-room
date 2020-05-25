@@ -10,9 +10,5 @@ module.exports = (sequelize, DataTypes) => {
     }
   );
 
-  OrderOption.associate = (models) => {
-    OrderOption.hasOne(models.EscapeRoomOrder, { foreignKey: 'orderOptionId' })
-  };
-
   return OrderOption;
 };
