@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
   });
 
   EscapeRoom.associate = (models) => {
-    EscapeRoom.hasMany(models.EscapeRoomOrder)
+    EscapeRoom.belongsTo(models.EscapeRoomOrder, { foreignKey: 'escapeRoomId' })
   };
 
   return EscapeRoom;

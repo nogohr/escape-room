@@ -1,5 +1,14 @@
 {
   "port": 3005,
+  "availability": {
+    "opening_hours": {
+      "start": 9,
+      "end": 18
+    },
+    "plan_ahead": {
+      "days": 7
+    }
+  },
   "development": {
     "baseUrl": "http://localhost",
     "username": "nogohr",

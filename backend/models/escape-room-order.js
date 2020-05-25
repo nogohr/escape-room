@@ -7,11 +7,19 @@ module.exports = (sequelize, DataTypes) => {
     bookerEmail: DataTypes.STRING,
     bookerPhoneNumber: DataTypes.STRING,
     remark: DataTypes.TEXT
+  }, {
+    tableName: 'escaperoomorders'
   });
 
   EscapeRoomOrder.associate = (models) => {
-    EscapeRoomOrder.belongsTo(models.EscapeRoom);
-    EscapeRoomOrder.belongsTo(models.OrderOption);
+    EscapeRoomOrder.belongsTo(models.EscapeRoom, {
+      foreignKey: 'escapeRoomId',
+      as: 'escapeRoom'
+  });
+    EscapeRoomOrder.belongsTo(models.OrderOption, {
+      foreignKey: 'orderOptionId',
+      as: 'orderOption'
+  });
   };
 
   return EscapeRoomOrder;
