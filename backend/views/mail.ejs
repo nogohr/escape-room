@@ -2,12 +2,12 @@
     <tbody>
       <tr>
         <td width="100%">
-          <div style="max-width:600px;Margin:0 auto">
+          <div style="max-width:40vw;Margin:0 auto">
             <table
               align="center"
               cellpadding="0"
               cellspacing="0"
-              style="border-spacing:0;font-family:gt-eesti,ArialMT,Helvetica,Arial,sans-serif;Margin:0 auto;padding:24px;width:100%;max-width:500px"
+              style="border-spacing:0;font-family:gt-eesti,ArialMT,Helvetica,Arial,sans-serif;Margin:0 auto;padding:24px;width:100%;max-width:100%"
             >
               <tbody>
                 <tr>
@@ -38,13 +38,7 @@
                               <tbody>
                                 <tr>
                                   <td>
-                                    <strong style="font-family:Helvetica,Arial,sans-serif;color:#054752">Hallo <%= customer_name %>, </strong>
-                                    
-                                    <h1
-                                      style="font-size:26px;line-height:30px;color:#054752;word-break:normal"
-                                    >
-                                        Bedankt voor uw reservering bij NoGoHR Escape Rooms
-                                    </h1>
+                                    <strong style="font-family:Helvetica,Arial,sans-serif;color:#054752">Hallo <%= customer_name %>, </strong><br/>
                                   </td>
                                 </tr>
                               </tbody>
@@ -63,7 +57,42 @@
                     <table width="100%" style="margin-bottom:20px;width:100%">
                       <tbody>
                         <tr>
-                            <!-- TODO: content hier -->
+                          <p
+                            style="font-size:14px;line-height:30px;color:#054752;word-break:normal"
+                          >
+                            Bedankt voor uw reservering bij NoGoHR Escape Rooms.
+                          </p>
+                            <p
+                              style="font-size:14px;line-height:30px;color:#054752;word-break:normal"
+                            >
+                              Uw heeft een reservering gedaan voor <strong><%= escape_room_name %></strong> om <strong><%= reservation_date %></strong>. <br/>
+                              jullie zullen de escape room gaan proberen te ontsnappen met <%= player_count %> spelers.
+                            </p>
+
+                            <%if (order_option_name) { %>
+                              <p
+                                style="font-size:14px;line-height:30px;color:#054752;word-break:normal"
+                              >
+                                Uw heeft gekozen voor de extra optie: <b><%= order_option_name %></b>. <br/>
+                                Deze zal beschikbaar zijn nadat jullie klaar zijn met de escape room.
+                              </p>
+                            <% } %>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <table width="100%" style="margin-bottom:20px;width:100%">
+                      <tbody>
+                        <tr>
+                            <p
+                              style="font-size:14px;line-height:30px;color:#054752;word-break:normal"
+                            >
+                              Met vriendelijke groet, <br/>
+                              Het NoGoHR Escape Room Team.
+                            </p>
                         </tr>
                       </tbody>
                     </table>

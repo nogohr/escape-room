@@ -8,7 +8,12 @@ const SEND_GRID_API_KEY = config.sendGridApiKey;
 exports.sendMail = async function (req, res) {
 
     return res.render('mail.ejs', {
-        customer_name: 'Henk de Tester'
+        customer_name: 'Henk de Tester',
+        escape_room_name: 'Escape room 1',
+        reservation_date: '12-05-2020 14:30',
+        player_count: 6,
+        order_option_name: 'Lunch pakket'
+        // order_option_name: null
     });
 
 
