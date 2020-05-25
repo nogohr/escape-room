@@ -1,7 +1,7 @@
 const models = require('../models');
 const Order = models.EscapeRoomOrder;
 
-exports.getOrder = async function (req, res) {
+exports.getOrders = async function (req, res) {
   const order = await Order.findAll();
 
   const result = {
@@ -32,7 +32,16 @@ exports.storeOrder = async function (req, res) {
   res.status(200).json(result);
 }
 
-exports.updateOrder = async function (req, res) {
+exports.getOrderById = async function (req, res) {
+  await Order.findByPk(req.params.id).then((order) => {
+    res.status(200).json({
+      'data': order,
+      'statusCode': 200
+    });
+  });
+};
+
+exports.getOrderById = async function (req, res) {
   await Order.findByPk(req.params.id).then(function (option) {
     option.update({
       escapeRoomId: req.body.escapeRoomId,

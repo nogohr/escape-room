@@ -29,6 +29,15 @@ exports.storeEscapeRoom = async function (req, res) {
   res.status(200).json(result);
 }
 
+exports.getEscapeRoomById = async function (req, res) {
+    const escapeRoom = await EscapeRoom.findByPk(req.params.id)
+
+    res.status(200).json({
+        'data': escapeRoom,
+        'statusCode': 200
+    });
+}
+
 exports.updateEscapeRoom = async function (req, res) {
     const escapeRoom = await EscapeRoom.findByPk(req.params.id)
 
