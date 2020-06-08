@@ -41,7 +41,7 @@ exports.getOrderById = async function (req, res) {
   });
 };
 
-exports.getOrderById = async function (req, res) {
+exports.updateOrder = async function (req, res) {
   await Order.findByPk(req.params.id).then(function (option) {
     option.update({
       escapeRoomId: req.body.escapeRoomId,
