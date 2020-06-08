@@ -12,6 +12,7 @@ import { FetchRoomOptions } from 'helpers/fetch';
 const UpsellView = (props) => {
   let location = useLocation();
   const [options, setRoomOptions] = useState();
+  const [selectedOption, setSelectedOption] = useState();
 
   useEffect(() => {
     FetchRoomOptions()
@@ -25,14 +26,22 @@ const UpsellView = (props) => {
       });
   }, [location]);
 
+  useEffect(() => {
+    console.log('Selected Option', selectedOption);
+  }, [selectedOption]);
+
+  const selectOption = (item) => {
+    setSelectedOption(item);
+    console.log('SelectedOption', item);
+  };
   //const { fromNotifications } = this.props.location.state
   console.log('Upsell Props', location.state.items);
-
+  const items = location.state.items;
   return (
     <PageLayout>
       <h1>Eten en drinken</h1>
-      <Upsell options={options} />
-      <Footer items={location.state.items} link='/reserveren/overzicht' />
+      <Upsell selectedOption={selectOption} options={options} />
+      <Footer items={{ selectedOption, items }} link='/reserveren/overzicht' />
     </PageLayout>
   );
 };

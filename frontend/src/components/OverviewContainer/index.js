@@ -11,9 +11,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function OverviewContainer() {
+export default function OverviewContainer({ items }) {
   const classes = useStyles();
 
+  console.log('Overview Items', items);
   return (
     <Grid
       direction='row'
@@ -23,8 +24,8 @@ export default function OverviewContainer() {
       fullWidth
     >
       <Grid item>
-        <OverviewItem item='1x drinken + een hapje' />
-        <OverviewItem item='Escape Room 1' />
+        <OverviewItem item={`Upsell Optie: ${items.selectedOption}`} />
+        <OverviewItem item={`Escape Room: ${items.items.selectedItem}`} />
       </Grid>
     </Grid>
   );

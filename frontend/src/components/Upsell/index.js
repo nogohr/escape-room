@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function UpsellSelect({ options }) {
+export default function UpsellSelect({ options, selectedOption }) {
   const classes = useStyles();
 
   useEffect(() => {
@@ -32,6 +32,7 @@ export default function UpsellSelect({ options }) {
           {options &&
             options.data.map((item, index) => (
               <UpsellItem
+                selectedOption={selectedOption}
                 id={item.id}
                 key={index}
                 price={item.price}

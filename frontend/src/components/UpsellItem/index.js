@@ -23,7 +23,7 @@ const useStyles = makeStyles({
   },
 });
 
-const UpsellItem = ({ title, price, description }) => {
+const UpsellItem = ({ title, price, description, id, selectedOption }) => {
   const [clicked, setClick] = useState(false);
   const classes = useStyles();
 
@@ -50,7 +50,7 @@ const UpsellItem = ({ title, price, description }) => {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size='small' color='primary'>
+        <Button size='small' color='primary' onClick={selectedOption(id)}>
           Kiezen
         </Button>
       </CardActions>
