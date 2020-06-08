@@ -31,3 +31,13 @@ Usage
     ```
     make up
     ```
+
+Mailtrap
+--------
+
+To inspect e-mails send by the application you can open mailtrap:
+
+http://localhost:8025/
+
+username: mailtrap<br> 
+password: mailtrap
