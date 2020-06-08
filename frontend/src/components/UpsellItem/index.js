@@ -11,11 +11,11 @@ import Typography from '@material-ui/core/Typography';
 const useStyles = makeStyles({
   root: {
     width: '100%',
-    maxWidth: 345,
+    maxWidth: 260,
   },
   clicked: {
-    maxWidth: 345,
-    minWidth: 345,
+    maxWidth: 260,
+    minWidth: 260,
     backgroundColor: 'darkseagreen',
   },
   media: {
@@ -43,7 +43,7 @@ const UpsellItem = ({ title, price, description }) => {
             {title}
           </Typography>
           <Typography variant='body2' color='textSecondary' component='p'>
-            Prijs: {price}
+            Prijs: €{price}
             <br />
             {description}
           </Typography>

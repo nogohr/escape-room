@@ -14,16 +14,16 @@ const UpsellView = (props) => {
   const [options, setRoomOptions] = useState();
 
   useEffect(() => {
-    // FetchRoomOptions()
-    //   .then((data) => {
-    //     console.log('Rooms', data);
-    //     setRoomOptions(data);
-    //     return data;
-    //   })
-    //   .catch((error) => {
-    //     console.log('Error', error);
-    //   });
-  });
+    FetchRoomOptions()
+      .then((data) => {
+        console.log('Rooms Upsell', data);
+        setRoomOptions(data);
+        return data;
+      })
+      .catch((error) => {
+        console.log('Error', error);
+      });
+  }, [location]);
 
   //const { fromNotifications } = this.props.location.state
   console.log('Upsell Props', location.state.items);

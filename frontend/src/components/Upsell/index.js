@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 
@@ -18,23 +18,27 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function UpsellSelect() {
+export default function UpsellSelect({ options }) {
   const classes = useStyles();
+
+  useEffect(() => {
+    console.log('Upsell Component props', options);
+  }, [options]);
 
   return (
     <Grid container className={classes.root} spacing={2}>
       <Grid item xs={12}>
         <Grid container justify='space-evenly' spacing={3}>
-          <UpsellItem
-            price='2'
-            title='1x drinken + een hapje'
-            description='Na de escape room krijgt u een drankje'
-          />
-          <UpsellItem
-            price='5'
-            title='1x drinken'
-            description='Na de escape room krijgt u een hapje en een drankje'
-          />
+          {options &&
+            options.data.map((item, index) => (
+              <UpsellItem
+                id={item.id}
+                key={index}
+                price={item.price}
+                title={item.name}
+                description={item.description}
+              />
+            ))}
         </Grid>
       </Grid>
     </Grid>
