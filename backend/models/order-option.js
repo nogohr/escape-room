@@ -10,9 +10,5 @@ module.exports = (sequelize, DataTypes) => {
     }
   );
 
-  OrderOption.associate = (models) => {
-    OrderOption.hasOne(models.EscapeRoomOrder)
-  };
-
   return OrderOption;
 };

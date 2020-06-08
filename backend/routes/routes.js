@@ -1,12 +1,11 @@
 const express = require('express');
 const cors = require('cors');
 const router = express.Router();
-const models = require('../models');
 const controllers = require('../controllers');
-const EscapeRoom = models.EscapeRoom;
-const OrderOption = models.OrderOption;
 const OrderOptionController = controllers.OrderOptionController;
 const EscapeRoomController = controllers.EscapeRoomController;
+const MailController = controllers.MailController;
+const OrderController = controllers.OrderController;
 const AvailabilityController = controllers.AvailabilityController;
 
 router.get('/', (req, res, next) => {
@@ -32,5 +31,12 @@ router.get('/escape-room-options', OrderOptionController.getOrderOptions);
 router.post('/escape-room-options', OrderOptionController.storeOrderOption);
 router.put('/escape-room-options/:id', OrderOptionController.updateOrderOption);
 router.delete('/escape-room-options/:id', OrderOptionController.deleteOrderOption);
+
+router.get('/escape-room-order', OrderController.getOrder);
+router.post('/escape-room-order', OrderController.storeOrder);
+router.put('/escape-room-order/:id', OrderController.updateOrder);
+router.delete('/escape-room-order/:id', OrderController.deleteOrder);
+
+router.get('/order-mail/:orderId', MailController.sendMail);
 
 exports.routeHandler = router;

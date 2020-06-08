@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Grid from "@material-ui/core/Grid";
+import React, { useState } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
 
 // Components
-import OverviewItem from "components/OverviewItem";
+import OverviewItem from 'components/OverviewItem';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -16,15 +16,15 @@ export default function OverviewContainer() {
 
   return (
     <Grid
-      direction="row"
-      justify="center"
-      alignItems="center"
+      direction='row'
+      justify='center'
+      alignItems='center'
       spacing={3}
       fullWidth
     >
       <Grid item>
-        <OverviewItem item="Cola + Fris" />
-        <OverviewItem item="Escape Room" />
+        <OverviewItem item='1x drinken + een hapje' />
+        <OverviewItem item='Escape Room 1' />
       </Grid>
     </Grid>
   );

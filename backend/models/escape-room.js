@@ -10,9 +10,5 @@ module.exports = (sequelize, DataTypes) => {
     tableName: 'escaperooms'
   });
 
-  EscapeRoom.associate = (models) => {
-    EscapeRoom.hasMany(models.EscapeRoomOrder)
-  };
-
   return EscapeRoom;
 };
