@@ -15,7 +15,13 @@
     "password": "passw0rd",
     "database": "nogohr",
     "host": "mysql",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "mail": {
+      "host": "mailtrap",
+      "port": 25,
+      "username": null,
+      "password": null
+    }
   },
   "test": {
     "baseUrl": "",
@@ -23,7 +29,13 @@
     "password": null,
     "database": "database_test",
     "host": "mysql",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "mail": {
+      "host": "mailtrap",
+      "port": 25,
+      "username": null,
+      "password": null
+    }
   },
   "production": {
     "baseUrl": "",
@@ -31,6 +43,12 @@
     "password": null,
     "database": "database_production",
     "host": "mysql",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "mail": {
+      "host": "mailtrap",
+      "port": 25,
+      "username": null,
+      "password": null
+    }
   }
 }
