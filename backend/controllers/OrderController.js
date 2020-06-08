@@ -13,7 +13,7 @@ exports.getOrder = async function (req, res) {
 }
 
 exports.storeOrder = async function (req, res) {
-  const order = Order.create({
+  const order = await Order.create({
     escapeRoomId: req.body.escapeRoomId,
     orderOptionId: req.body.orderOptionId,
     reservationDate: req.body.reservationDate,
@@ -26,7 +26,8 @@ exports.storeOrder = async function (req, res) {
 
   const result = {
     'data': order,
-    'statusCode': 200
+    'statusCode': 200,
+    'orderMailUrl': `${req.headers.host}/order-mail/${order.id}`
   };
 
   res.status(200).json(result);

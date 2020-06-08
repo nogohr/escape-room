@@ -5,6 +5,9 @@ const debug = require('debug')('app');
 const routes = require('./routes/routes');
 const app = express();
 
+// set express view engine
+app.set("view engine", "ejs");
+
 const config = require('./config/config.json');
 
 app.use(bodyParser.urlencoded({ extended: false }));
