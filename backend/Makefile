@@ -10,6 +10,11 @@ install: ## Install app
 	make pristine
 .PHONY: install
 
+update: ## Update after pull
+	docker-compose run --rm app npm install
+	docker-compose run --rm app npm run migrate
+.PHONY: update
+
 up: ## Start app
 	docker-compose up -d
 .PHONY: up
