@@ -37,7 +37,7 @@ exports.storeOrder = async function (req, res) {
 }
 
 exports.getOrderById = async function (req, res) {
-  await Order.findByPk(req.params.id).then((order) => {
+  await Order.findByPk(req.params.id, {include: ['EscapeRoom', 'OrderOption']}).then((order) => {
     res.status(200).json({
       'data': order,
       'statusCode': 200
