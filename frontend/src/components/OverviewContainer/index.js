@@ -11,8 +11,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function OverviewContainer({ items }) {
+export default function OverviewContainer({ items, selectedRoom, selectedOption }) {
   const classes = useStyles();
+
+  const escapeRoomName = selectedRoom && selectedRoom.name ? selectedRoom.name : '';
+  const orderOptionName = selectedOption && selectedOption.name ? selectedOption.name : '';
 
   console.log('Overview Items', items);
   return (
@@ -24,8 +27,8 @@ export default function OverviewContainer({ items }) {
       fullWidth
     >
       <Grid item>
-        <OverviewItem item={`Upsell Optie: ${items.selectedOption}`} />
-        <OverviewItem item={`Escape Room: ${items.items.selectedItem}`} />
+        <OverviewItem item={`Escape Room: ${escapeRoomName}`} />
+        <OverviewItem item={`Extra Optie: ${orderOptionName}`} />
       </Grid>
     </Grid>
   );

@@ -33,7 +33,7 @@ export default function InteractiveList({ item, price, quantity }) {
         fullWidth
         spacing={2}
       >
-        <Grid fullWidth item xs={12} md={6}>
+        <Grid fullWidth item xs={12} md={12}>
           <div className={classes.demo}>
             <List>
               <ListItem>
