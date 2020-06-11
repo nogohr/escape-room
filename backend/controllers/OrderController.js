@@ -1,5 +1,6 @@
 const models = require('../models');
 const Order = models.EscapeRoomOrder;
+const MailController = require('./MailController');
 
 exports.getOrders = async function (req, res) {
   const order = await Order.findAll();
@@ -13,7 +14,7 @@ exports.getOrders = async function (req, res) {
 }
 
 exports.storeOrder = async function (req, res) {
-  const order = Order.create({
+  const order = await Order.create({
     escapeRoomId: req.body.escapeRoomId,
     orderOptionId: req.body.orderOptionId,
     reservationDate: req.body.reservationDate,
@@ -24,9 +25,12 @@ exports.storeOrder = async function (req, res) {
     remark: req.body.remark
   });
 
+  await MailController.sendMail(order.id, res);
+
   const result = {
     'data': order,
-    'statusCode': 200
+    'statusCode': 200,
+    'orderMailUrl': `${req.headers.host}/order-mail/${order.id}`
   };
 
   res.status(200).json(result);

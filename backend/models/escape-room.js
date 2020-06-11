@@ -10,9 +10,5 @@ module.exports = (sequelize, DataTypes) => {
     tableName: 'escaperooms'
   });
 
-  EscapeRoom.associate = (models) => {
-    EscapeRoom.belongsTo(models.EscapeRoomOrder, { foreignKey: 'escapeRoomId' })
-  };
-
   return EscapeRoom;
 };

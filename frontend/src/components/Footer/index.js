@@ -1,8 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { makeStyles } from "@material-ui/core/styles";
-import Grid from "@material-ui/core/Grid";
-import Button from "@material-ui/core/Button";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { makeStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
+import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -10,16 +10,16 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     padding: theme.spacing(2),
-    textAlign: "center",
+    textAlign: 'center',
     color: theme.palette.text.secondary,
   },
   link: {
-    textDecoration: "none",
+    textDecoration: 'none',
     color: theme.palette.text.secondary,
   },
 }));
 
-export default function Footer({ link, props }) {
+export default function Footer({ link, items }) {
   const classes = useStyles();
 
   return (
@@ -30,12 +30,12 @@ export default function Footer({ link, props }) {
             to={{
               pathname: link,
               state: {
-                props,
+                items,
               },
             }}
             className={classes.link}
           >
-            <Button variant="contained" color="primary" disableElevation>
+            <Button variant='contained' color='primary' disableElevation>
               Volgende
             </Button>
           </Link>
