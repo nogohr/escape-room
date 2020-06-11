@@ -1,5 +1,6 @@
 const models = require('../models');
 const Order = models.EscapeRoomOrder;
+const MailController = require('./MailController');
 
 exports.getOrder = async function (req, res) {
   const order = await Order.findAll();
@@ -23,6 +24,8 @@ exports.storeOrder = async function (req, res) {
     bookerPhoneNumber: req.body.bookerPhoneNumber,
     remark: req.body.remark
   });
+
+  await MailController.sendMail(order.id, res);
 
   const result = {
     'data': order,
