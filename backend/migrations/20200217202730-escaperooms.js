@@ -13,6 +13,9 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
+      price: {
+        type: Sequelize.INTEGER
+      },
       maxPlayerCount: {
         type: Sequelize.INTEGER
       },

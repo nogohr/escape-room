@@ -15,6 +15,7 @@ exports.getEscapeRooms = async function (req, res) {
 exports.storeEscapeRoom = async function (req, res) {
   const escapeRoom = await EscapeRoom.create({
     name: req.body.name,
+    price: req.body.price,
     maxPlayerCount: req.body.maxPlayerCount,
     playTime: req.body.playTime,
     setupTime: req.body.setupTime,
@@ -41,6 +42,7 @@ exports.updateEscapeRoom = async function (req, res) {
 
     const note = await escapeRoom.update({
         name: req.body.name,
+        price: req.body.price,
         maxPlayerCount: req.body.maxPlayerCount,
         playTime: req.body.playTime,
         setupTime: req.body.setupTime,
