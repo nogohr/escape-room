@@ -22,6 +22,14 @@ services:
     volumes:
       - data-mysql:/var/lib/mysql
 
+  mailtrap:
+      image: eaudeweb/mailtrap
+      environment:
+        MT_USER: 'mailtrap'
+        MT_PASSWD: 'mailtrap'
+      ports:
+        - 8025:80
+
 volumes:
   data-mysql:
     driver: local
