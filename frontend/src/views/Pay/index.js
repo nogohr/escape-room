@@ -12,7 +12,7 @@ const Pay = () => {
   return (
     <PageLayout>
       <h1>Betalen</h1>
-      <Footer link='/reserveren/success' />
+      <Footer items={location.state.items[0].items} link='/reserveren/success' />
     </PageLayout>
   );
 };
