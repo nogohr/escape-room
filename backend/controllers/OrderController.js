@@ -2,7 +2,7 @@ const models = require('../models');
 const Order = models.EscapeRoomOrder;
 const MailController = require('./MailController');
 
-exports.getOrder = async function (req, res) {
+exports.getOrders = async function (req, res) {
   const order = await Order.findAll();
 
   const result = {
@@ -35,6 +35,15 @@ exports.storeOrder = async function (req, res) {
 
   res.status(200).json(result);
 }
+
+exports.getOrderById = async function (req, res) {
+  await Order.findByPk(req.params.id, {include: ['EscapeRoom', 'OrderOption']}).then((order) => {
+    res.status(200).json({
+      'data': order,
+      'statusCode': 200
+    });
+  });
+};
 
 exports.updateOrder = async function (req, res) {
   await Order.findByPk(req.params.id).then(function (option) {

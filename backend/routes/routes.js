@@ -22,6 +22,7 @@ router.all('*', cors());
 /** Escape Room Routes */
 router.get('/escape-rooms', EscapeRoomController.getEscapeRooms);
 router.post('/escape-rooms', EscapeRoomController.storeEscapeRoom);
+router.get('/escape-rooms/:id', EscapeRoomController.getEscapeRoomById);
 router.put('/escape-rooms/:id', EscapeRoomController.updateEscapeRoom);
 router.delete('/escape-rooms/:id', EscapeRoomController.deleteEscapeRoom);
 router.get('/escape-room-availability/:id', AvailabilityController.getAvailability);
@@ -31,8 +32,9 @@ router.post('/escape-room-options', OrderOptionController.storeOrderOption);
 router.put('/escape-room-options/:id', OrderOptionController.updateOrderOption);
 router.delete('/escape-room-options/:id', OrderOptionController.deleteOrderOption);
 
-router.get('/escape-room-order', OrderController.getOrder);
+router.get('/escape-room-order', OrderController.getOrders);
 router.post('/escape-room-order', OrderController.storeOrder);
+router.get('/escape-room-order/:id', OrderController.getOrderById);
 router.put('/escape-room-order/:id', OrderController.updateOrder);
 router.delete('/escape-room-order/:id', OrderController.deleteOrder);
 
