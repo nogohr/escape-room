@@ -6,6 +6,7 @@ import DatePicker from 'components/DatePicker';
 import Room from 'components/Room';
 import TimeSelect from 'components/TimeSelect';
 import Footer from 'components/Footer';
+import PlayerSelect from 'components/PlayerSelect';
 
 // helpers
 import { FetchRooms, FetchRoomAvailablity } from 'helpers/fetch';
@@ -17,6 +18,7 @@ const Reserve = () => {
   const [selectedDate, setSelectedDate] = useState(new Date().toISOString());
   const [availableTimes, setAvailableTimes] = useState();
   const [room, setRoom] = useState(0);
+  const [selectedPlayerCount, setSelectedPlayerCount] = useState();
 
   useEffect(() => {
     FetchRooms()
@@ -31,19 +33,21 @@ const Reserve = () => {
   }, [room]);
 
   const selectItem = (item) => {
-    console.log('Selected Room', item);
     setSelectedItem(item);
     FetchRoomAvailablity(item).then((data) => setAvailableTimes(data.data));
   };
 
   const selectTime = (item) => {
     setSelectedTime(item);
-    console.log('SelectedTime', item);
   };
 
   const selectDate = (date) => {
     setSelectedDate(date);
-    console.log('SelectedDate', date);
+  };
+
+  const selectPlayerCount = (event) => {
+    const playerAmount = Number(event.target.value);
+    setSelectedPlayerCount(playerAmount);
   };
 
   return (
@@ -54,8 +58,9 @@ const Reserve = () => {
       {availableTimes && (
         <TimeSelect availableTimes={availableTimes} selectTime={selectTime} />
       )}
+      <PlayerSelect selectPlayerCount={selectPlayerCount}/>
       <Footer
-        items={{ selectedItem, selectedTime, selectedDate }}
+        items={{ selectedItem, selectedTime, selectedDate, selectedPlayerCount }}
         link='/reserveren/food'
       />
     </PageLayout>
