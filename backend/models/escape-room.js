@@ -2,6 +2,7 @@
 module.exports = (sequelize, DataTypes) => {
   const EscapeRoom = sequelize.define('EscapeRoom', {
     name: DataTypes.STRING,
+    price: DataTypes.INTEGER,
     maxPlayerCount: DataTypes.INTEGER,
     playTime: DataTypes.INTEGER,
     setupTime: DataTypes.INTEGER,
