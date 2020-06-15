@@ -2,6 +2,8 @@ const models = require('../models');
 const Order = models.EscapeRoomOrder;
 const MailController = require('./MailController');
 
+const moment = require('moment');
+
 exports.getOrders = async function (req, res) {
   const order = await Order.findAll();
 
@@ -17,7 +19,7 @@ exports.storeOrder = async function (req, res) {
   const order = await Order.create({
     escapeRoomId: req.body.escapeRoomId,
     orderOptionId: req.body.orderOptionId,
-    reservationDate: req.body.reservationDate,
+    reservationDate: moment(req.body.reservationDate).toDate(),
     playerCount: req.body.playerCount,
     bookerName: req.body.bookerName,
     bookerEmail: req.body.bookerEmail,
