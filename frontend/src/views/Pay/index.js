@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
+import qs from 'qs';
 
 // Components
 import PageLayout from 'components/PageLayout';
@@ -31,16 +32,20 @@ const Pay = () => {
   const sendOrder = () => {
     fetch(`${process.env.REACT_APP_API_URL}/escape-room-order`, {
       method: 'POST',
-      body: {
-        EscapeRoomId: selectedItem,
-        OrderOptionId: selectedOption,
-        ReservationDate: selectedTime,
-        PlayerCount: selectedPlayerCount,
-        BookerName: name,
-        BookerEmail: email,
-        BookerPhoneNumber: phone,
-        Remark: remarks,
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        Accept: 'application/json; charset=utf-8',
       },
+      body: qs.stringify({
+        escapeRoomId: selectedItem,
+        orderOptionId: selectedOption,
+        reservationDate: selectedTime,
+        playerCount: selectedPlayerCount,
+        bookerName: name,
+        bookerEmail: email,
+        bookerPhoneNumber: phone,
+        remark: remarks,
+      }),
     })
       .then((response) => response.json())
       .then((result) => {
