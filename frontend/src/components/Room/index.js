@@ -46,6 +46,7 @@ const RoomSelect = (props) => {
                     selectItem={selectItem}
                     id={item.id}
                     name={item.name}
+                    description={item.description}
                     maxPlayerCount={item.maxPlayerCount}
                     playTime={item.playTime}
                     setupTime={item.setupTime}

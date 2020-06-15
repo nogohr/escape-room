@@ -22,7 +22,7 @@ const useStyles = makeStyles({
     backgroundColor: 'darkseagreen',
   },
   media: {
-    height: 140,
+    height: 220,
   },
   actions: {
     justifyContent: 'space-around',
@@ -35,6 +35,7 @@ const RoomItem = (props) => {
 
   const {
     name,
+    description,
     maxPlayerCount,
     id,
     playTime,
@@ -60,7 +61,7 @@ const RoomItem = (props) => {
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image={`https://picsum.photos/500?random=${key}`}
+          image={`images/escape${id}.png`}
           title={`Escape Room ${key}`}
         />
         <CardContent>
@@ -68,7 +69,7 @@ const RoomItem = (props) => {
             {name}
           </Typography>
           <Typography variant='body2' color='textSecondary' component='p'>
-            Lorem Lorem Ipsum Ipsum Escape room
+            {description}
           </Typography>
         </CardContent>
       </CardActionArea>

@@ -11,6 +11,10 @@ install: ## Install project dependencies
 	$(foreach svc,$(SERVICES),($(MAKE) -C $(svc) $@) || exit $$?;)
 .PHONY: install
 
+update: ## Update after pull
+	$(foreach svc,$(SERVICES),($(MAKE) -C $(svc) $@) || exit $$?;)
+.PHONY: update
+
 up: ## Bring project up
 	$(foreach svc,$(SERVICES),($(MAKE) -C $(svc) $@) || exit $$?;)
 .PHONY: up

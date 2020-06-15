@@ -35,7 +35,7 @@ const UpsellItem = ({ title, price, description, id, selectedOption }) => {
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image='https://picsum.photos/500?random'
+          image={`/images/upsell${id}.png`}
           title={title}
         />
         <CardContent>

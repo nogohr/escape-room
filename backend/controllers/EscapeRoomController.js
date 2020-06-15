@@ -15,6 +15,7 @@ exports.getEscapeRooms = async function (req, res) {
 exports.storeEscapeRoom = async function (req, res) {
   const escapeRoom = await EscapeRoom.create({
     name: req.body.name,
+    description: req.body.description,
     price: req.body.price,
     maxPlayerCount: req.body.maxPlayerCount,
     playTime: req.body.playTime,
