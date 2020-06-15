@@ -18,11 +18,11 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.text.secondary,
   },
   button: {
-    marginTop: '20px'
-  }
+    marginTop: '20px',
+  },
 }));
 
-export default function Footer({ link, items }) {
+export default function Footer({ link, items, onClick }) {
   const classes = useStyles();
 
   return (
@@ -38,7 +38,12 @@ export default function Footer({ link, items }) {
             }}
             className={classes.link}
           >
-            <Button className={classes.button} variant='contained' color='primary' >
+            <Button
+              onClick={onClick}
+              className={classes.button}
+              variant='contained'
+              color='primary'
+            >
               Volgende
             </Button>
           </Link>
